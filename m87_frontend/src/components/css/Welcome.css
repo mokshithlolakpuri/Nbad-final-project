@@ -1,0 +1,426 @@
+.container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0628 0%, #1a1150 100%);
+    color: #fff;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .customCursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00ffff;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s;
+  }
+  
+  .container:hover .customCursor {
+    transform: scale(2);
+  }
+  
+  .header {
+    padding: 1rem 0;
+    margin-bottom: 4rem;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .brainIcon {
+    width: 48px;
+    height: 48px;
+    color: #00ffff;
+    animation: pulse 2s infinite;
+  }
+  
+  .logoText {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  
+  .glitchText {
+    position: relative;
+    animation: glitch 3s infinite;
+  }
+  
+  .glitchText::before,
+  .glitchText::after {
+    content: 'GEN AI';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .glitchText::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00de;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+  }
+  
+  .glitchText::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #ff00de;
+    animation: glitch-anim2 1s infinite linear alternate-reverse;
+  }
+  
+  .innovations {
+    color: #00ffff;
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+  
+  .main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .heroSection {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .glassCard {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .glassCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+  }
+  
+  .sparkle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: #00ffff;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: sparkle 2s infinite;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    color: #00ffff;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .description {
+    text-align: center;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .highlight {
+    color: #00ffff;
+    font-weight: bold;
+  }
+  
+  .innovationHub {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideUp 1s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .innovationHub:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+  }
+  
+  .hubContent {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .hubTitle {
+    font-size: 2rem;
+    color: #00ffff;
+    margin-bottom: 1rem;
+  }
+  
+  .hubDescription {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+  }
+  
+  .enterButton {
+    background: linear-gradient(90deg, #00ffff 0%, #00cccc 100%);
+    border: none;
+    border-radius: 25px;
+    padding: 0.75rem 2rem;
+    color: #0a0628;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .enterButton:hover {
+    transform: translateX(5px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  }
+  
+  .arrow {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .brainModel {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes sparkle {
+    0% { opacity: 0; transform: scale(0) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1) rotate(180deg); }
+    100% { opacity: 0; transform: scale(0) rotate(360deg); }
+  }
+  
+  @keyframes glitch-anim {
+    0% {
+      clip: rect(31px, 9999px, 94px, 0);
+      transform: skew(0.85deg);
+    }
+    5% {
+      clip: rect(70px, 9999px, 71px, 0);
+      transform: skew(0.17deg);
+    }
+    10% {
+      clip: rect(90px, 9999px, 100px, 0);
+      transform: skew(0.01deg);
+    }
+    15% {
+      clip: rect(73px, 9999px, 19px, 0);
+      transform: skew(0.05deg);
+    }
+    20% {
+      clip: rect(90px, 9999px, 79px, 0);
+      transform: skew(0.28deg);
+    }
+    25% {
+      clip: rect(54px, 9999px, 42px, 0);
+      transform: skew(0.71deg);
+    }
+    30% {
+      clip: rect(46px, 9999px, 3px, 0);
+      transform: skew(0.85deg);
+    }
+    35% {
+      clip: rect(8px, 9999px, 12px, 0);
+      transform: skew(0.39deg);
+    }
+    40% {
+      clip: rect(71px, 9999px, 62px, 0);
+      transform: skew(0.05deg);
+    }
+    45% {
+      clip: rect(21px, 9999px, 30px, 0);
+      transform: skew(0.39deg);
+    }
+    50% {
+      clip: rect(15px, 9999px, 22px, 0);
+      transform: skew(0.81deg);
+    }
+    55% {
+      clip: rect(50px, 9999px, 21px, 0);
+      transform: skew(0.29deg);
+    }
+    60% {
+      clip: rect(13px, 9999px, 23px, 0);
+      transform: skew(0.73deg);
+    }
+    65% {
+      clip: rect(40px, 9999px, 24px, 0);
+      transform: skew(0.25deg);
+    }
+    70% {
+      clip: rect(61px, 9999px, 54px, 0);
+      transform: skew(0.35deg);
+    }
+    75% {
+      clip: rect(72px, 9999px, 84px, 0);
+      transform: skew(0.45deg);
+    }
+    80% {
+      clip: rect(93px, 9999px, 52px, 0);
+      transform: skew(0.13deg);
+    }
+    85% {
+      clip: rect(31px, 9999px, 18px, 0);
+      transform: skew(0.93deg);
+    }
+    90% {
+      clip: rect(56px, 9999px, 12px, 0);
+      transform: skew(0.03deg);
+    }
+    95% {
+      clip: rect(5px, 9999px, 9px, 0);
+      transform: skew(0.24deg);
+    }
+    100% {
+      clip: rect(82px, 9999px, 24px, 0);
+      transform: skew(0.29deg);
+    }
+  }
+  
+  @keyframes glitch-anim2 {
+    0% {
+      clip: rect(96px, 9999px, 58px, 0);
+      transform: skew(0.05deg);
+    }
+    5% {
+      clip: rect(68px, 9999px, 84px, 0);
+      transform: skew(0.58deg);
+    }
+    10% {
+      clip: rect(47px, 9999px, 91px, 0);
+      transform: skew(0.41deg);
+    }
+    15% {
+      clip: rect(69px, 9999px, 47px, 0);
+      transform: skew(0.54deg);
+    }
+    20% {
+      clip: rect(24px, 9999px, 78px, 0);
+      transform: skew(0.63deg);
+    }
+    25% {
+      clip: rect(3px, 9999px, 19px, 0);
+      transform: skew(0.22deg);
+    }
+    30% {
+      clip: rect(67px, 9999px, 25px, 0);
+      transform: skew(0.18deg);
+    }
+    35% {
+      clip: rect(14px, 9999px, 90px, 0);
+      transform: skew(0.97deg);
+    }
+    40% {
+      clip: rect(66px, 9999px, 72px, 0);
+      transform: skew(0.45deg);
+    }
+    45% {
+      clip: rect(87px, 9999px, 4px, 0);
+      transform: skew(0.31deg);
+    }
+    50% {
+      clip: rect(32px, 9999px, 100px, 0);
+      transform: skew(0.88deg);
+    }
+    55% {
+      clip: rect(87px, 9999px, 52px, 0);
+      transform: skew(0.29deg);
+    }
+    60% {
+      clip: rect(44px, 9999px, 12px, 0);
+      transform: skew(0.77deg);
+    }
+    65% {
+      clip: rect(27px, 9999px, 85px, 0);
+      transform: skew(0.11deg);
+    }
+    70% {
+      clip: rect(50px, 9999px, 26px, 0);
+      transform: skew(0.52deg);
+    }
+    75% {
+      clip: rect(57px, 9999px, 95px, 0);
+      transform: skew(0.89deg);
+    }
+    80% {
+      clip: rect(77px, 9999px, 58px, 0);
+      transform: skew(0.33deg);
+    }
+    85% {
+      clip: rect(19px, 9999px, 13px, 0);
+      transform: skew(0.66deg);
+    }
+    90% {
+      clip: rect(56px, 9999px, 100px, 0);
+      transform: skew(0.18deg);
+    }
+    95% {
+      clip: rect(60px, 9999px, 23px, 0);
+      transform: skew(0.45deg);
+    }
+    100% {
+      clip: rect(87px, 9999px, 77px, 0);
+      transform: skew(0.59deg);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .innovationHub {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .brainModel {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .title {
+      font-size: 2rem;
+    }
+  
+    .hubTitle {
+      font-size: 1.5rem;
+    }
+  }
+  
+  
